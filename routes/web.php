@@ -13,12 +13,20 @@
 
 Route::get('/', function () {
     return view('blank.index');
-});
+})->name('announcement');
 
 
-Route::group(['prefix' => 'series', 'as' => 'series.'],function (){
+Route::group(['prefix' => 'series', 'as' => 'series.'], function (){
 
     $seriesController = 'SeriesController';
-    Route::get('/', $seriesController . '@index');
+    $videoController = "VideoController";
+
+    //Series
+    Route::get('/', $seriesController . '@index')->name('index');
+
+    //Videos
+    Route::get('/{series}/video', $videoController . '@index')->name('video.index');
+    Route::get('/{series}/video/{id}', $videoController . '@index')->name('video.id');
+
 });
 

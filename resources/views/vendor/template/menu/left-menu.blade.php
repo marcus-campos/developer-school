@@ -5,7 +5,7 @@
         <div id="sidebar-menu">
             <ul>
                 <li class="has_sub">
-                    <a href="javascript:void(0);" class="waves-effect"><i class="ti-announcement"></i> <span> Anúncios </span> </a>
+                    <a href="{{ route('announcement') }}" class="waves-effect"><i class="ti-announcement"></i> <span> Anúncios </span> </a>
                 </li>
 
                 <li class="has_sub">
@@ -13,7 +13,7 @@
                 </li>
 
                 <li class="has_sub">
-                    <a href="javascript:void(0);" class="waves-effect"><i class="fa fa-film"></i> <span> Séries </span>  </a>
+                    <a href="{{ route('series.index') }}" class="waves-effect"><i class="fa fa-film"></i> <span> Séries </span>  </a>
                 </li>
 
                 <li class="has_sub">

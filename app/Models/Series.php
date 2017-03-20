@@ -15,4 +15,9 @@ class Series extends Model
         'description',
         'user_id'
     ];
+
+    public function videos()
+    {
+        return $this->hasMany(Video::class);
+    }
 }

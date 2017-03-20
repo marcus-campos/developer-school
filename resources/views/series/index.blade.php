@@ -13,9 +13,10 @@
                 </div>
             @endforeach
         </div>
+    </div>
+    <div class="row">
         <div class="text text-center">
             {{ $series->links() }}
         </div>
-
     </div>
 @endsection

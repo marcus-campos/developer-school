@@ -14,6 +14,7 @@
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 use App\Models\Series;
 use App\Models\User;
+use App\Models\Video;
 
 $factory->define(User::class, function (Faker\Generator $faker) {
     static $password;
@@ -30,11 +31,21 @@ $factory->define(Series::class, function (Faker\Generator $faker) {
 
     return [
         'title' => $faker->sentence,
-        'like' => random_int(1, 1000),
         'image' => $faker->imageUrl(),
         'objective' => $faker->text(),
         'requirements' => $faker->text(),
         'description' => $faker->text(),
         'user_id' => 1
+    ];
+});
+
+$factory->define(Video::class, function (Faker\Generator $faker) {
+
+    return [
+        'title' => $faker->sentence,
+        'video' => $faker->imageUrl(),
+        'episode' => random_int(0, 10),
+        'like' => random_int(0, 1000),
+        'series_id' => random_int(0, 50),
     ];
 });

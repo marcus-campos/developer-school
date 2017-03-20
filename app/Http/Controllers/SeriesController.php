@@ -9,7 +9,7 @@ class SeriesController extends Controller
 {
     public function index()
     {
-        $series = Series::simplePaginate(16);
+        $series = Series::paginate(32);
 
         return view(
             'series.index',
