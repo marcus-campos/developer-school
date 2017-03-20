@@ -25,9 +25,9 @@ class UsersTableSeeder extends Seeder
                 'role' => 'admin',
                 'remember_token' => str_random(10),
             ]
-        )->create();
+        );
 
 
-        //factory(User::class, 3)->create();
+        factory(User::class, 3)->create();
     }
 }

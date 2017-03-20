@@ -16,9 +16,17 @@ class CreateSeriesTable extends Migration
         Schema::create('series', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title');
+            $table->string('image')->nullable();
+            $table->bigInteger('like')->nullable();
             $table->text('objective');
             $table->text('requirements');
             $table->text('description');
+            $table->integer('user_id')->unsigned();
+            $table->timestamps();
+        });
+
+        Schema::table('series', function (Blueprint $table){
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 

@@ -14,3 +14,11 @@
 Route::get('/', function () {
     return view('blank.index');
 });
+
+
+Route::group(['prefix' => 'series', 'as' => 'series.'],function (){
+
+    $seriesController = 'SeriesController';
+    Route::get('/', $seriesController . '@index');
+});
+
