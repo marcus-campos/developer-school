@@ -19,6 +19,7 @@ class CreateVideosTable extends Migration
             $table->string('video');
             $table->unsignedSmallInteger('episode');
             $table->bigInteger('like');
+            $table->bigInteger('views');
             $table->integer('series_id')->unsigned();
             $table->timestamps();
         });

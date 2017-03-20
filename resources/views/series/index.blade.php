@@ -7,7 +7,7 @@
                 <div class="col-sm-6 col-lg-3 col-md-4">
                     <!--<div class="card-box">-->
                         <p>
-                            <img src="{{ $s->image }}" class="thumb-img" alt="work-thumbnail">
+                            <a href="{{ route('series.video.index', ['series' => $s->id]) }}"><img src="{{ $s->image }}" class="thumb-img" alt="work-thumbnail"></a>
                         </p>
                     <!--</div>-->
                 </div>

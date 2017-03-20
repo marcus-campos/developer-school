@@ -46,6 +46,7 @@ $factory->define(Video::class, function (Faker\Generator $faker) {
         'video' => $faker->imageUrl(),
         'episode' => random_int(0, 10),
         'like' => random_int(0, 1000),
-        'series_id' => random_int(0, 50),
+        'views' => 0,
+        'series_id' => random_int(0, 50)
     ];
 });

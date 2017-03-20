@@ -11,6 +11,7 @@ class Video extends Model
         'video',
         'episode',
         'like',
+        'views',
         'series_id'
     ];
 
