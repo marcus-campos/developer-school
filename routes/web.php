@@ -12,21 +12,28 @@
 */
 
 Route::get('/', function () {
-    return view('blank.index');
+    return view('announcement.index');
 })->name('announcement');
+
+Route::get('subscription', function () {
+    return view('subscription.index');
+})->name('subscription');
 
 
 Route::group(['prefix' => 'series', 'as' => 'series.'], function (){
 
     $seriesController = 'SeriesController';
-    $videoController = "VideoController";
+
 
     //Series
     Route::get('/', $seriesController . '@index')->name('index');
 
-    //Videos
-    Route::get('/{series}/video', $videoController . '@index')->name('video.index');
-    Route::get('/{series}/video/{id}', $videoController . '@show')->name('video.id');
+    Route::group(['prefix' => '{series}/video', 'middleware' => 'premium.videos' , 'as' => 'video.'], function () {
+        $videoController = "VideoController";
+        //Videos
+        Route::get('/', $videoController . '@index')->name('index');
+        Route::get('{id}', $videoController . '@show')->name('id');
+    });
 
 });
 

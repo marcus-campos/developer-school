@@ -4,7 +4,7 @@
         <!-- LOGO -->
         <div class="topbar-left topbar-left-sm">
             <div class="text-center">
-                <a href="{{ route('announcement') }}" class="logo"><i class="icon-magnet icon-c-logo"></i><span>Ub<i class="md md-album"></i>ld</span></a>
+                <a href="{{ route('announcement') }}" class="logo"><i class="icon-c-logo">DEV</i><span>DEV</span></a>
                 <!-- Image Logo here -->
                 <!--<a href="index.html" class="logo">-->
                 <!--<i class="icon-c-logo"> <img src="assets/images/logo_sm.png" height="42"/> </i>-->
@@ -24,10 +24,10 @@
                         <span class="clearfix"></span>
                     </div>
 
-                    <form role="search" class="navbar-left app-search pull-left hidden-xs">
+                    <!--<form role="search" class="navbar-left app-search pull-left hidden-xs">
                         <input type="text" placeholder="Pesquisar..." class="form-control">
                         <a href=""><i class="fa fa-search"></i></a>
-                    </form>
+                    </form>-->
 
 
                     <ul class="nav navbar-nav navbar-right pull-right">
