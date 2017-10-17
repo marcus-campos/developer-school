@@ -12,7 +12,11 @@
 */
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
-$factory->define(App\User::class, function (Faker\Generator $faker) {
+use App\Models\Series;
+use App\Models\User;
+use App\Models\Video;
+
+$factory->define(User::class, function (Faker\Generator $faker) {
     static $password;
 
     return [
@@ -20,5 +24,29 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
         'email' => $faker->unique()->safeEmail,
         'password' => $password ?: $password = bcrypt('secret'),
         'remember_token' => str_random(10),
+    ];
+});
+
+$factory->define(Series::class, function (Faker\Generator $faker) {
+
+    return [
+        'title' => $faker->sentence,
+        'image' => $faker->imageUrl(),
+        'objective' => $faker->text(),
+        'requirements' => $faker->text(),
+        'description' => $faker->text(),
+        'user_id' => 1
+    ];
+});
+
+$factory->define(Video::class, function (Faker\Generator $faker) {
+
+    return [
+        'title' => $faker->sentence,
+        'video' => $faker->imageUrl(),
+        'episode' => random_int(0, 10),
+        'like' => random_int(0, 1000),
+        'views' => 0,
+        'series_id' => random_int(0, 50)
     ];
 });

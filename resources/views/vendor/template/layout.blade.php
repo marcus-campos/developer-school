@@ -44,7 +44,7 @@
 
                 @yield('container')
 
-                <div style="min-height: 1000px;"></div>
+                <!--<div style="min-height: 1000px;"></div>-->
 
 
             </div> <!-- container -->

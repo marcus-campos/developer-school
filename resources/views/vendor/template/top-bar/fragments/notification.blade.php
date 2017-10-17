@@ -1,5 +1,6 @@
 @section('notification')
-    <li class="dropdown top-menu-item-xs">
+    @if(\Illuminate\Support\Facades\Auth::check())
+        <li class="dropdown top-menu-item-xs">
         <a href="#" data-target="#" class="dropdown-toggle waves-effect waves-light" data-toggle="dropdown" aria-expanded="true">
             <i class="icon-bell"></i> <span class="badge badge-xs badge-danger">3</span>
         </a>
@@ -103,4 +104,5 @@
             </li>
         </ul>
     </li>
+    @endif
 @endsection
